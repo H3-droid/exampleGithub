@@ -1,3 +1,62 @@
+<html>
+
+<head>
+<script src="p5.js"> </script>
+</head>
+
+<body>
+<script id="script" type="text/javascript">
+   
+
+	//anything after the “//” in the line is ignored as a comment
+	//before anything, add your variables as “var …”
+var x;
+var displayH; //represents one screen height
+var displayHx2; //Hx2 x3 x4 represent additional space when we scroll
+var displayHx3;
+var displayHx4;
+var r;
+var g;
+var b;
+var randomSize;
+var img;
+
+function setup(){ //setup() is what happens as soon as you reload the page
+displayH = displayHeight; //define all var (variable) values in the setup
+displayHx2 = displayH*2;
+displayHx3 = displayH*3;
+displayHx4 = displayH*4;
+createCanvas(displayWidth, displayHx4); //otherwise windowWidth or custom #s
+background(0); 
+
+x=0;
+r=0;
+g=0;
+b=0;
+randomSize=0;
+fill(255, 153, 0);
+rect(0, displayHx2, displayWidth, displayH);
+//remember syntax is rect(top left x value, top left y value, width, height)
+img = loadImage('food.jpg');
+}
+
+function draw(){ //what happens in loop constantly and forever while site is loaded
+noStroke();
+fill(196, 239, 255);
+rect(0,0, displayWidth, displayHeight);
+
+if(mouseIsPressed){ 
+if(mouseX>300 && mouseX<1100 && (mouseY-150)>displayHx2 && (mouseY-250) <displayHx2){
+fill(255);
+textSize(25);
+text('TEXT', 200, 400+displayHx2);
+} //window.open("https://www.google.com/");
+}
+else {
+fill(255, 153, 0);
+rect(0, displayHx2, displayWidth, displayH);
+}
+
 noFill();
 background(0, 0, 0);
 stroke(242, 233, 233);
@@ -124,3 +183,11 @@ draw= function() {
             }
         }
 };
+//can also do image(img, x of top L corner, y of top L corner, width, height)
+//img.width/2
+
+
+
+//keyIsDown and XXXX_ARROW are different from Khan Academy
+
+}
